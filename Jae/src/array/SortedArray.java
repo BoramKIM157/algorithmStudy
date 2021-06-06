@@ -1,4 +1,4 @@
-package quizArray;
+package array;
 
 public class SortedArray {
 	
