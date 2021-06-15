@@ -1,4 +1,4 @@
-package array;
+package array_02;
 
 public class FlipString {
 	
