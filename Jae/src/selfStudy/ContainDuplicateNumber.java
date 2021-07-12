@@ -11,48 +11,48 @@ public class ContainDuplicateNumber {
 	 * 예 ) 1 2 3 4 5 6 ==> false
 	 * 예 ) 1 1 2 2 3 1 ==> true
 	 */
-	
+
 	public static void main(String[] args) {
 		ContainDuplicateNumber containDuplicateNumber = new ContainDuplicateNumber();
-		int[] number = {1,2,3,4,5,3};
-//		System.out.println(containDuplicateNumber.solution1(number));
-//		System.out.println(containDuplicateNumber.solution2(number));
+		int[] number = {1, 2, 3, 4, 5, 3};
+		//		System.out.println(containDuplicateNumber.solution1(number));
+		//		System.out.println(containDuplicateNumber.solution2(number));
 		System.out.println(containDuplicateNumber.solution3(number));
 	}
-	
+
 	//시간복잡도 O(n^2)
 	//공간복잡도 O(1)
-	private boolean solution1 (int[] number) {
-		for(int i = 0; i<number.length; i++) {
-			for(int j = i+1 ; j<number.length; j++) {
-				if(number[i] == number[j]) {
+	private boolean solution1(int[] number) {
+		for (int i = 0; i < number.length; i++) {
+			for (int j = i + 1; j < number.length; j++) {
+				if (number[i] == number[j]) {
 					return true;
 				}
 			}
 		}
 		return false;
 	}
-	
+
 	//시간복잡도 O(nlogn)
 	//공간복잡도 O(n)
-	private boolean solution2 (int[] number) {
+	private boolean solution2(int[] number) {
 		Arrays.sort(number);
-		for(int i = 0; i<number.length-1; i++) {
-			if(number[i]==number[i+1]) {
+		for (int i = 0; i < number.length - 1; i++) {
+			if (number[i] == number[i + 1]) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	//시간복잡도 O(N)
 	//공간복잡도 O(N)
-	private boolean solution3 (int[] number) {
+	private boolean solution3(int[] number) {
 		Set<Integer> numberSet = new HashSet();
-		for(int num : number) {
-			if(numberSet.contains(num)) {
+		for (int num : number) {
+			if (numberSet.contains(num)) {
 				return true;
-			}else {
+			} else {
 				numberSet.add(num);
 			}
 		}
